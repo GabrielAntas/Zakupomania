@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "main": "code-text-binary",
+        "iostream": "cpp"
+    }
+}
