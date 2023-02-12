@@ -9,7 +9,8 @@ Sklep::Sklep(Miasto* _miasto, string _nazwa, pair<double, double> _położenie)
     }
 
 bool Sklep::sprzedaj(Towar* towar, Sklep* sklep) {
-    return 0; // todo
+    towary[towar].first--;
+    return 1;
 }
 
 void Sklep::dodajTowar(Towar* towar, int n) {
@@ -44,3 +45,6 @@ void Sklep::przejmijSiec(ObiektHandlowy*) {
 pair<int, double> Sklep::sprawdźTowar(Towar* towar) {
     return towary[towar];
 }
+
+
+map<Towar*, pair<int, double>> Sklep::dajListeTowarów() const {return towary;}

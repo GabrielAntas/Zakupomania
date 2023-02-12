@@ -22,4 +22,5 @@ class Sklep : public ObiektHandlowy {
         void przejmijSiec(ObiektHandlowy*) override;
         pair<int, double> sprawdźTowar(Towar*) override;
         Siec* dajSiec() const;
+        map<Towar*, pair<int, double>> dajListeTowarów() const;
 };

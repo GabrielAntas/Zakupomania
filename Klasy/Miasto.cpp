@@ -87,7 +87,7 @@ void Miasto::initTest() {
     obiektyHandlowe[8]->przejmijSklep(obiektyHandlowe[5]);
     obiektyHandlowe[8]->przejmijSklep(obiektyHandlowe[6]);
 
-    żabka->przejmijSiec(obiektyHandlowe[8]); // zdebugować gdy nullptr
+    obiektyHandlowe[7]->przejmijSiec(obiektyHandlowe[8]);
 
     Maksymalista* jan = new Maksymalista(this, "Jan", 10.0, pair<double, double>(2.1, 3.7), &żabka1);
 }

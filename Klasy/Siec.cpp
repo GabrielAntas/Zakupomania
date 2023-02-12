@@ -45,9 +45,10 @@ void Siec::wyłączSklep(ObiektHandlowy* sklep) {
 
 pair<int, double> Siec::sprawdźTowar(Towar* towar) {
     for(auto &it : sklepy) {
-        cout << "eh\n";//pair<double, int> 
+        pair<int, double> p = it->sprawdźTowar(towar);
+        if(p.first != 0) return p;
     }
-    return pair<double, int>(.0, 0);
+    return pair<int, double>(0, -1.0);
 }
 
 void Siec::dodajTowar(Towar*, int) {
