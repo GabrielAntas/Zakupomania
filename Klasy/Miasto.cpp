@@ -5,6 +5,7 @@
 #include "Siec.h"
 #include "Towar.h"
 #include "MyDebugger.h"
+#include "ObiektHandlowy.h"
 
 using namespace std;
 
@@ -54,24 +55,24 @@ void Miasto::initTest() {
     dodajTowar(kawior);
     dodajTowar(pierogi);
 
-    żabka1.dodajTowar(kremówka, 10);
-    żabka1.ustalCene(kremówka, 15.0);
-    żabka1.dodajTowar(monsterEnergyMangoLoco, 5);
-    żabka1.ustalCene(monsterEnergyMangoLoco, 5.50);
-    żabka1.dodajTowar(pierogi, 3);
-    żabka1.ustalCene(pierogi, 10.00);
-    żabka2.dodajTowar(kremówka, 20);
-    żabka2.ustalCene(kremówka, 13.0);
-    żabka2.dodajTowar(monsterEnergyKhaotic, 1);
-    żabka2.ustalCene(monsterEnergyKhaotic, 4.50);
-    żabka3.dodajTowar(kremówka, 100);
-    żabka3.ustalCene(kremówka, 20);
-    żabka3.dodajTowar(perłaExport, 1000);
-    żabka3.ustalCene(perłaExport, 1.00);
-    sklepKawiorowy.dodajTowar(kawiorPremium, 100);
-    sklepKawiorowy.ustalCene(kawiorPremium, 1000.00);
-    sklepKawiorowy.dodajTowar(kawior, 1000);
-    sklepKawiorowy.ustalCene(kawior, 100.00);
+    obiektyHandlowe[0]->dodajTowar(kremówka, 10);
+    obiektyHandlowe[0]->ustalCene(kremówka, 15.0);
+    obiektyHandlowe[0]->dodajTowar(monsterEnergyMangoLoco, 5);
+    obiektyHandlowe[0]->ustalCene(monsterEnergyMangoLoco, 5.50);
+    obiektyHandlowe[0]->dodajTowar(pierogi, 3);
+    obiektyHandlowe[0]->ustalCene(pierogi, 10.00);
+    obiektyHandlowe[1]->dodajTowar(kremówka, 20);
+    obiektyHandlowe[1]->ustalCene(kremówka, 13.0);
+    obiektyHandlowe[1]->dodajTowar(monsterEnergyKhaotic, 1);
+    obiektyHandlowe[1]->ustalCene(monsterEnergyKhaotic, 4.50);
+    obiektyHandlowe[2]->dodajTowar(kremówka, 100);
+    obiektyHandlowe[2]->ustalCene(kremówka, 20);
+    obiektyHandlowe[2]->dodajTowar(perłaExport, 1000);
+    obiektyHandlowe[2]->ustalCene(perłaExport, 1.00);
+    obiektyHandlowe[3]->dodajTowar(kawiorPremium, 100);
+    obiektyHandlowe[3]->ustalCene(kawiorPremium, 1000.00);
+    obiektyHandlowe[3]->dodajTowar(kawior, 1000);
+    obiektyHandlowe[3]->ustalCene(kawior, 100.00);
     
     ObiektHandlowy* żabka = new Siec(this, "Żabka");
     ObiektHandlowy* biedronka = new Siec(this, "Biedronka");
@@ -79,6 +80,14 @@ void Miasto::initTest() {
     dodajObiektHandlowy(żabka);
     dodajObiektHandlowy(biedronka);
 
+    obiektyHandlowe[7]->przejmijSklep(obiektyHandlowe[0]);
+    obiektyHandlowe[7]->przejmijSklep(obiektyHandlowe[1]);
+    obiektyHandlowe[7]->przejmijSklep(obiektyHandlowe[2]);
+
+    obiektyHandlowe[8]->przejmijSklep(obiektyHandlowe[5]);
+    obiektyHandlowe[8]->przejmijSklep(obiektyHandlowe[6]);
+
+    żabka->przejmijSiec(obiektyHandlowe[8]); // zdebugować gdy nullptr
 
     Maksymalista* jan = new Maksymalista(this, "Jan", 10.0, pair<double, double>(2.1, 3.7), &żabka1);
 }

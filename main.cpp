@@ -5,6 +5,7 @@
 #include "Klasy/Sklep.h"
 #include "Klasy/Kupujący.h"
 #include "Klasy/MyDebugger.h"
+#include "Klasy/Miasto.h"
 
 using namespace std;
 
@@ -14,4 +15,8 @@ int main()
     debugger.setDebugMode(true);
     Miasto m{"Wadowice"};
     m.initTest();
+
+    map<double, int> mp;
+    mp[.5] = 3;
+    cout << mp[.4];
 }
