@@ -34,16 +34,21 @@ void Siec::przejmijSiec(ObiektHandlowy* siec) {
     }
 }
 
-void Siec::wyłączSklep(Sklep* sklep) {
-    sklepy.erase(sklepy.find(sklep));
+void Siec::wyłączSklep(ObiektHandlowy* sklep) {
+    Sklep* S_sklep = dynamic_cast<Sklep*>(sklep);
+    if(S_sklep == nullptr) {
+        throw runtime_error("Niepoprawne użycie wyłączSklep przez Sieć");
+    }
+    sklepy.erase(sklepy.find(S_sklep));
+
 }
 
-// pair<double, int> Siec::sprawdźTowar(Towar* towar) const {
-//     //for(auto &it : sklepy) {
-//     //    cout << "eh\n";//pair<double, int> 
-//     //}
-//     return pair<double, int>(.0, 0);
-// }
+pair<int, double> Siec::sprawdźTowar(Towar* towar) {
+    for(auto &it : sklepy) {
+        cout << "eh\n";//pair<double, int> 
+    }
+    return pair<double, int>(.0, 0);
+}
 
 void Siec::dodajTowar(Towar*, int) {
     throw runtime_error("Próba dodania towaru do sieci");

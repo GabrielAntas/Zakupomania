@@ -19,5 +19,6 @@ class ObiektHandlowy {
         virtual void przejmijSiec(ObiektHandlowy*) = 0;
         virtual void dodajTowar(Towar*, int) = 0;
         virtual void ustalCene(Towar*, double) = 0;
-        //virtual pair<double, int> sprawdźTowar(Towar*) const = 0;
+        virtual void wyłączSklep(ObiektHandlowy*) = 0;
+        virtual pair<int, double> sprawdźTowar(Towar*) = 0;
 };

@@ -16,9 +16,9 @@ class Siec : public ObiektHandlowy {
         void przejmijSklep(ObiektHandlowy*) override;
         void przejmijSiec(ObiektHandlowy*) override;
         void ustawMarże(double _marża);
-        void wyłączSklep(Sklep*);
+        void wyłączSklep(ObiektHandlowy*) override;
         bool sprzedaj(Towar*, Sklep*) override;
         void dodajTowar(Towar*, int) override;
         void ustalCene(Towar*, double) override;
-        //pair<double, int> sprawdźTowar(Towar*) const override;
+        pair<int, double> sprawdźTowar(Towar*) override;
 };

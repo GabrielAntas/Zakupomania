@@ -28,10 +28,10 @@ void Sklep::dołączDoSieci(Siec* _siec) {
     siec = _siec;
 }
 
-// void Sklep::odłączOdSieci() {
-//     siec->wyłączSklep(this);
-//     siec = nullptr;
-// }
+void Sklep::wyłączSklep(ObiektHandlowy* sklep) {
+    siec->wyłączSklep(this);
+    siec = nullptr;
+}
 
 void Sklep::przejmijSklep(ObiektHandlowy*) {
     throw std::runtime_error("Próba przejęcia sklepu przez sklep");
@@ -41,6 +41,6 @@ void Sklep::przejmijSiec(ObiektHandlowy*) {
     throw std::runtime_error("Próba przejęcia sieci przez sklep");
 }
 
-// pair<double, int> Sklep::sprawdźTowar(Towar* towar) const {
-//     return pair<double, int>(.0, 0);
-// }
+pair<int, double> Sklep::sprawdźTowar(Towar* towar) {
+    return towary[towar];
+}

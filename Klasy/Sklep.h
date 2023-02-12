@@ -17,9 +17,9 @@ class Sklep : public ObiektHandlowy {
         void dodajTowar(Towar*, int n = 0);
         void ustalCene(Towar*, double) override;
         void dołączDoSieci(Siec*);
-        //void odłączOdSieci();
+        void wyłączSklep(ObiektHandlowy* sklep) override; // używaj this
         void przejmijSklep(ObiektHandlowy*) override;
         void przejmijSiec(ObiektHandlowy*) override;
-        //pair<double, int> sprawdźTowar(Towar*) const override;
+        pair<int, double> sprawdźTowar(Towar*) override;
         Siec* dajSiec() const;
 };
