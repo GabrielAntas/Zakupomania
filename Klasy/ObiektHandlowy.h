@@ -1,10 +1,10 @@
 #pragma once
 #include <string>
 #include "Miasto.h"
+#include "Towar.h"
 
 using namespace std;
 
-class Towar;
 class Sklep;
 
 class ObiektHandlowy {
@@ -13,5 +13,5 @@ class ObiektHandlowy {
         Miasto* miasto;
         ObiektHandlowy(Miasto*, string);
     public:
-        virtual bool sprzedaj(Towar, Sklep*) = 0;
+        virtual bool sprzedaj(Towar*, Sklep*) = 0;
 };

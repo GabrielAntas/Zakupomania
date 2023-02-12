@@ -15,4 +15,5 @@ class Siec : public ObiektHandlowy {
         Siec(Miasto* _miasto, string _nazwa);
         void przejmijSklep(Sklep&);
         void przejmijSieć(Siec&);
+        bool sprzedaj(Towar*, Sklep*) override;
 };
