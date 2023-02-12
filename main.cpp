@@ -2,16 +2,12 @@
 #include <vector>
 #include "Klasy/Siec.h"
 #include "Klasy/Sklep.h"
+#include "Klasy/Kupujący.h"
 
 using namespace std;
 
 int main()
 {
-    Sklep sklep;
-    Siec siec(sklep);
-    siec.drukuj();
-    sklep.drukuj();
-    //siec.sklepy.push_back(sklep);
-    cout << "b\n";
+    //siec.sklepsy.push_back(sklep);
     return 0;
 }

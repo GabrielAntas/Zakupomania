@@ -1,14 +1,18 @@
 #pragma once
 #include <vector>
 #include "Sklep.h"
+#include "ObiektHandlowy.h"
+
+using namespace std;
 
 class Sklep;
+class ObiektHandlowy;
 
-class Siec {
-    std::vector<Sklep*> sklepy;
+class Siec : public ObiektHandlowy {
+    vector<Sklep*> sklepy;
+    double marża;
     public:
-        Siec();
-        Siec(Sklep&);
-        void drukuj();
-        void dodaj_sklep(Sklep&);
+        Siec(Miasto* _miasto, string _nazwa);
+        void przejmijSklep(Sklep&);
+        void przejmijSieć(Siec&);
 };
