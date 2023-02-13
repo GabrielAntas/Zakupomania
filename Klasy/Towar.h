@@ -9,4 +9,7 @@ class Towar {
     public:
         Towar(string _nazwa);
         string dajNazwe() const;
+        ~Towar() = default;
+        Towar(const Towar&) = default;
+        Towar& operator=(const Towar&) = default;
 };

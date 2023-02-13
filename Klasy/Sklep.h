@@ -13,7 +13,7 @@ class Sklep : public ObiektHandlowy {
     map<Towar*, pair<int, double>> towary;
     public:
         Sklep(Miasto* _miasto, string _nazwa, pair<double, double> _położenie);
-        bool sprzedaj(Towar*, Sklep*) override;
+        bool sprzedaj(Towar*) override;
         void dodajTowar(Towar*, int n = 0);
         void ustalCene(Towar*, double) override;
         void dołączDoSieci(Siec*);
@@ -23,4 +23,12 @@ class Sklep : public ObiektHandlowy {
         pair<int, double> sprawdźTowar(Towar*) override;
         Siec* dajSiec() const;
         map<Towar*, pair<int, double>> dajListeTowarów() const;
+        pair<double, double> dajPołożenie() const;
+        bool czyWSieci();
+        string dajNazwe() const override;
+        void wypisz() const override;
+        void ustawMarże(double) override;
+        virtual ~Sklep() = default;
+        Sklep(const Sklep&) = default;
+        Sklep& operator=(const Sklep&) = default;
 };

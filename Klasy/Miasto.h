@@ -20,6 +20,11 @@ class Miasto {
         void dodajObiektHandlowy(ObiektHandlowy*);
         void dodajTowar(Towar*);
         void dodajKupujący(Kupujący*);
-
+        Towar* dajLosowyTowar();
+        vector<ObiektHandlowy*> dajSklepy() const;
         void initTest();
+        void wypisz() const;
+        ~Miasto(); // TOTOTOTOTOT
+        Miasto(const Miasto&) = default;
+        Miasto& operator=(const Miasto&) = default;
 };

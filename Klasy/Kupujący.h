@@ -15,5 +15,8 @@ class Kupujący {
         Kupujący(Miasto* _miasto, string _imie, double _budżet, pair<double, double> _położenie);
     public:
         virtual bool kup() = 0;
-        friend ostream& operator<<(ostream& os, const Kupujący& dt);
+        virtual void wypisz() const = 0;
+        virtual ~Kupujący() = default;
+        Kupujący(const Kupujący&) = default;
+        Kupujący& operator=(const Kupujący&) = default;
 };

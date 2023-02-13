@@ -12,11 +12,7 @@ using namespace std;
 int main()
 {
     MyDebugger debugger;
-    debugger.setDebugMode(true);
+    debugger.setDebugMode(false);
     Miasto m{"Wadowice"};
     m.initTest();
-
-    map<double, int> mp;
-    mp[.5] = 3;
-    cout << mp[.4];
 }
